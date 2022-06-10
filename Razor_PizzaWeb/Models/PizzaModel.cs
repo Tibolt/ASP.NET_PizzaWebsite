@@ -4,6 +4,7 @@ namespace Razor_PizzaWeb.Models
 {
     public class PizzaModel
     {
+        public int Id { get; set; }
         [DisplayName("Pizza Name")]
         public string? PizzaName { get; set; }
         public float BasePrize { get; set; } = 10;
@@ -17,5 +18,6 @@ namespace Razor_PizzaWeb.Models
         public bool Ham { get; set; }
         public bool Mushroom { get; set; }
         public bool Tuna { get; set; }
+
     }
 }
