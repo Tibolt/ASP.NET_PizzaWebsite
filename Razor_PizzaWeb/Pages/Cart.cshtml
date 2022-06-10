@@ -1,0 +1,33 @@
+﻿@page
+@model Razor_PizzaWeb.Pages.CartModel
+@{
+}
+
+<div class="text-center">
+    <div class="mainText">
+        <h1>Your cart</h1>
+    </div>
+</div>
+
+<div class="text-center">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Pizza name</th>
+                <th scope="col">Prize</th>
+                <th scope="col">Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">@Model.PizzaName </th>
+                <td>@Model.FinalPrize$</td>
+                <td>Delete</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="text-end">
+    <a class="btn btn-primary mt-1" asp-area="" asp-page="/Checkout">Go To Checkout!</a>
+</div>
