@@ -3,10 +3,33 @@
 @{
     ViewData["Title"] = "Home page";
 }
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService AuthorizationService
+
+@{
+    bool IsAdmin = false;
+    //if (string.IsNullOrWhiteSpace(User.IsInRole));
+    if(User.IsInRole("Admin"))
+        IsAdmin = true;
+}
 
 <div class="text-center">
-    <div class="mainText">
-        <h1 class="display-4">Welcome</h1>
+    <div>
+        @if(IsAdmin)
+        {
+            <div class="mainText">
+                <h1 class="display-4">Welcome Admin</h1>
+            </div>
+            <a class="nav-link text-dark" asp-page="/Admin/CreatePizza">Crate Pizza</a>
+            <a class="nav-link text-dark" asp-page="/Admin/ShowOrders">Show Orders</a>
+            <a class="btn" asp-page-handler="Logout" >LogOut</a>
+        }
+        else
+        {
+            <div class="mainText">
+                <h1 class="display-4">Welcome</h1>
+            </div>
+            <img class="mainImage img" src="~/images/Pizzas/Create.png" width="600"/>
+        }
     </div>
-    <img class="mainImage img" src="~/images/Pizzas/Create.png" width="600"/>
 </div>

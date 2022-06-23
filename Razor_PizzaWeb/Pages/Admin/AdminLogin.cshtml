@@ -1,0 +1,27 @@
+﻿@page
+@model Razor_PizzaWeb.Pages.Admin.AdminLoginModel
+@{
+}
+
+<div class="text-center">
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="Admin.Login" class="form-label">Login</label>
+            <input type="text" asp-for="Admin.Login" class="form-control" placeholder="Type your login"/>
+            <span asp-validation-for="Admin.Login" class="text-danger"></span>
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="Admin.Password" class="form-label">Password</label>
+            <input type="password" asp-for="Admin.Password" class="form-control"/>
+            <span asp-validation-for="Admin.Password" class="text-danger"></span>
+
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Client-Side Validation -->
+@section Scripts{
+    @{ <partial name="_ValidationScriptsPartial" />}
+}

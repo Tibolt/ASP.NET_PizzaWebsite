@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Razor_PizzaWeb.Data;
@@ -5,6 +6,7 @@ using Razor_PizzaWeb.Models;
 
 namespace Razor_PizzaWeb.Pages.Admin
 {
+    [Authorize(Roles = "Admin")]
     public class CreatePizzaModel : PageModel
     {
         [BindProperty]
@@ -17,7 +19,10 @@ namespace Razor_PizzaWeb.Pages.Admin
         }
         public void OnGet()
         {
-
+            if(HttpContext.Session.GetString("Login") != "Admin")
+            {
+                RedirectToPage("/Index");
+            }
         }
         public IActionResult OnPost()
         {

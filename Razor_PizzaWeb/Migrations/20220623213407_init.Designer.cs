@@ -11,8 +11,8 @@ using Razor_PizzaWeb.Data;
 namespace Razor_PizzaWeb.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220610183155_addedPizzaModel")]
-    partial class addedPizzaModel
+    [Migration("20220623213407_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,27 @@ namespace Razor_PizzaWeb.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("Razor_PizzaWeb.Models.AdminModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Login")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AdminModels");
+                });
+
             modelBuilder.Entity("Razor_PizzaWeb.Models.OrderModel", b =>
                 {
                     b.Property<int>("Id")
@@ -30,6 +51,10 @@ namespace Razor_PizzaWeb.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("BasePrize")
                         .HasColumnType("real");
@@ -46,8 +71,12 @@ namespace Razor_PizzaWeb.Migrations
                     b.Property<bool>("Mushroom")
                         .HasColumnType("bit");
 
-                    b.Property<string>("PizzaName")
+                    b.Property<string>("Number")
                         .IsRequired()
+                        .HasMaxLength(9)
+                        .HasColumnType("nvarchar(9)");
+
+                    b.Property<string>("PizzaName")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("SalamiPeperoni")

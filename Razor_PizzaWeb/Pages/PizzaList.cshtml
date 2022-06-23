@@ -32,6 +32,20 @@
 
 <div class="container text-center">
     <div class="row">
+        @foreach(var pizza in Model.PizzaList)
+        {
+            if (pizza.PizzaName == null) continue;
+            var imagePath = "/images/Pizzas/" + pizza.PizzaName + ".png";
+            <div class="col-4">
+                <div class="card text-center" style="width: 18rem;">
+                    <img src=@imagePath class="card-img-top" alt="" />
+                    <div class="card-body">
+                        <h5 class="card-title">@pizza.PizzaName</h5>
+                        <a class="btn btn-primary mt-1" style="float: left;" asp-page-handler="Order" asp-route-id="@pizza.Id">Try now!</a>
+                    </div>
+                </div>
+            </div>
+        }
         <div class="col-4">
             <div class="card text-center" style="width: 18rem;">
                 <img src="~/images/Pizzas/Margerita.png" class="card-img-top" alt="" />
@@ -39,26 +53,6 @@
                     <h5 class="card-title">Margerita</h5>
                     <p class="card-text">Tomato Souce, Cheese, Basil</p>
                     <a class="btn btn-primary mt-1" style="float: left;" asp-area="" asp-page="/Cart">Try now!</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card text-center" style="width: 18rem;">
-                <img src="~/images/Pizzas/Pepperoni.png" class="card-img-top" alt="" />
-                <div class="card-body">
-                    <h5 class="card-title">Pepperoni</h5>
-                    <p class="card-text">Tomato Souce, Cheese, Basil, Salami Pepperoni</p>
-                    <a href="#" class="btn btn-primary">Order</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card text-center" style="width: 18rem;">
-                <img src="~/images/Pizzas/Mushroom.png" class="card-img-top" alt="" />
-                <div class="card-body">
-                    <h5 class="card-title">Mushroom</h5>
-                    <p class="card-text">Tomato Souce, Cheese, Basil, Salami Pepperoni</p>
-                    <a href="#" class="btn btn-primary">Order</a>
                 </div>
             </div>
         </div>
