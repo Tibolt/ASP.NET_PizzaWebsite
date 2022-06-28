@@ -41,52 +41,10 @@
                     <img src=@imagePath class="card-img-top" alt="" />
                     <div class="card-body">
                         <h5 class="card-title">@pizza.PizzaName</h5>
-                        <a class="btn btn-primary mt-1" style="float: left;" asp-page-handler="Order" asp-route-id="@pizza.Id">Try now!</a>
+                        <a class="btn btn-primary mt-1" style="float: left;" asp-page-handler="Order" asp-route-id="@pizza.Id">Order</a>
                     </div>
                 </div>
             </div>
         }
-        <div class="col-4">
-            <div class="card text-center" style="width: 18rem;">
-                <img src="~/images/Pizzas/Margerita.png" class="card-img-top" alt="" />
-                <div class="card-body">
-                    <h5 class="card-title">Margerita</h5>
-                    <p class="card-text">Tomato Souce, Cheese, Basil</p>
-                    <a class="btn btn-primary mt-1" style="float: left;" asp-area="" asp-page="/Cart">Try now!</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4">
-            <div class="card text-center" style="width: 18rem;">
-                <img src="~/images/Pizzas/Hawaiian.png" class="card-img-top" alt="" />
-                <div class="card-body">
-                    <h5 class="card-title">Hawaiian</h5>
-                    <p class="card-text">Tomato Souce, Cheese, Basil, Anannas</p>
-                    <a href="#" class="btn btn-primary">Order</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card text-center" style="width: 18rem;">
-                <img src="~/images/Pizzas/Seafood.png" class="card-img-top" alt="" />
-                <div class="card-body">
-                    <h5 class="card-title">Sea Food</h5>
-                    <p class="card-text">Tomato Souce, Cheese, Basil</p>
-                    <a href="#" class="btn btn-primary">Order</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="card text-center" style="width: 18rem;">
-                <img src="~/images/Pizzas/Vegetarian.png" class="card-img-top" alt="" />
-                <div class="card-body">
-                    <h5 class="card-title">Vegetarion</h5>
-                    <p class="card-text">Tomato Souce, Cheese, Basil</p>
-                    <a href="#" class="btn btn-primary">Order</a>
-                </div>
-            </div>
-        </div>
     </div>
 </div>

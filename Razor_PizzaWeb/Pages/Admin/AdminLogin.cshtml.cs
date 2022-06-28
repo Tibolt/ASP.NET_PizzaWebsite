@@ -32,9 +32,6 @@ namespace Razor_PizzaWeb.Pages.Admin
                 var user = _context.AdminModels.Single(u => u.Login == admin.Login && u.Password == admin.Password);
                 if(user != null)
                 {
-                    //HttpContext.Session.SetString("AdminID", user.Id.ToString());
-                    //HttpContext.Session.SetString("Login", user.Login);
-
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, user.Login),

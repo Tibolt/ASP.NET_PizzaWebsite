@@ -15,14 +15,14 @@
             <tr>
                 <th scope="col">Pizza name</th>
                 <th scope="col">Prize</th>
-                <th scope="col">Edit</th>
+                <th scope="col">Toppings</th>
             </tr>
         </thead>
         <tbody>
             <tr>
                 <th scope="row">@Model.PizzaName </th>
                 <td>@Model.FinalPrize$</td>
-                <td>Delete</td>
+                <td>@Model.Toppings</td>
             </tr>
         </tbody>
     </table>
@@ -43,10 +43,6 @@
     </div>
 </div>
 
-
-<div class="text-end">
-    <a class="btn btn-primary mt-1" asp-page-handler="Pay" asp-route-PizzaName="@Model.PizzaName" asp-route-FinalPrize="@Model.FinalPrize">A Go To Checkout!</a>
-</div>
 
 <!-- Client-Side Validation -->
 @section Scripts{

@@ -14,6 +14,7 @@ namespace Razor_PizzaWeb.Pages.Admin
         public string PizzaName { get; set; }
         public float Prize { get; set; }
         public List<OrderModel> OrderList = new List<OrderModel>();
+        public Dictionary<int, String> ToppingsList = new Dictionary<int, String>();
 
         private readonly ApplicationDbContext _context;
 
@@ -26,22 +27,6 @@ namespace Razor_PizzaWeb.Pages.Admin
             OrderList = _context.PizzaOrders.ToList();
         }
         
-        public IActionResult OnPostDeletePost(int? id)
-        {
-            try
-            {
-                var obj = _context.PizzaOrders.Find(id);
-                if (obj == null)
-                    return NotFound();
-                _context.PizzaOrders.Remove(obj);
-                _context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-
-            }
-            return RedirectToPage("/Admin/ShowOrders");
-        }
         public IActionResult OnGetDelete(int? id)
         {
             try

@@ -16,6 +16,7 @@
                 <th scope="col">Order ID</th>
                 <th scope="col">Pizza name</th>
                 <th scope="col">Prize</th>
+                <th scope="col">Toppings</th>
                 <th scope="col">Address</th>
                 <th scope="col">Phone Number</th>
                 <th scope="col">Edit</th>
@@ -25,9 +26,10 @@
             @foreach(var order in Model.OrderList)
             {
                 <tr>
-                    <td width="30%">@order.Id</td>
-                    <td width="30%">@order.PizzaName</td>
-                    <td width="30%">@order.FinalPrize</td>
+                    <td width="10%">@order.Id</td>
+                    <td width="20%">@order.PizzaName</td>
+                    <td width="10%">@order.FinalPrize</td>
+                    <td width="30%">@order.Toppings</td>
                     <td width="30%">@order.Address</td>
                     <td width="30%">@order.Number</td>
                     <td witdh="30%">
